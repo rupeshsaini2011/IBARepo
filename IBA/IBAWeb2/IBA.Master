@@ -1,0 +1,168 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="IBA.master.cs" Inherits="IBAWeb2.IBA" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+     <title>Indian Bank's Assocations</title>
+    <link href="img/favicon.144x144.html" rel="apple-touch-icon" type="image/png" sizes="144x144">
+	<link href="img/favicon.114x114.html" rel="apple-touch-icon" type="image/png" sizes="114x114">
+	<link href="img/favicon.72x72.html" rel="apple-touch-icon" type="image/png" sizes="72x72">
+	<link href="img/favicon.57x57.html" rel="apple-touch-icon" type="image/png">
+	<link href="img/favicon.html" rel="icon" type="image/png">
+	<link href="img/favicon-2.html" rel="shortcut icon">
+
+
+	<link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="with-side-menu">
+    <header class="site-header">
+	    <div class="container-fluid">
+	        <a href="#" class="site-logo">                <!-- Logo code -->
+	           <img class="hidden-md-down" src="img/logo-2.png" alt="">
+	        </a>
+
+
+	    </div><!--.container-fluid-->
+
+
+          <div class="site-header-content">
+	            <div class="site-header-content-in">
+
+	                <div class="site-header-shown">
+
+	                    <div class="dropdown user-menu">
+	                        <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	                            <img src="img/avatar-2-64.png" alt="">
+	                        </button>
+	                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
+	                            <!-- <a class="dropdown-item" href="profile.php"><span class="font-icon glyphicon glyphicon-user"></span>Profile</a> -->
+
+	                            <a class="dropdown-item" href="logout.php"><span class="font-icon glyphicon glyphicon-log-out"></span>Logout</a>
+	                        </div>
+	                    </div>
+
+	                    <button type="button" class="burger-right">
+	                        <i class="font-icon-menu-addl"></i>
+	                    </button>
+	                </div><!--.site-header-shown-->
+
+	                <div class="mobile-menu-right-overlay"></div>
+	                <div class="site-header-collapsed">
+	                    <div class="site-header-collapsed-in">
+
+	                    </div><!--.site-header-collapsed-in-->
+	                </div><!--.site-header-collapsed-->
+	            </div><!--site-header-content-in-->
+	        </div><!--.site-header-content-->
+	    </div><!--.container-fluid-->
+
+
+
+	</header><!--.site-header-->
+
+   <div class="mobile-menu-left-overlay"></div>
+
+    	<nav class="side-menu">
+	    <ul class="side-menu-list">
+	    	
+		
+	       <li class="grey with-sub">
+	       	  <!--  <a href="profile.php">-->
+	                <span>
+	                    <i class="font-icon font-icon-dashboard"></i>
+	                    <span class="lbl">Dashboard</span>
+	                </span>
+	          <!--  </a>-->
+	        </li>
+			<?php
+if ( $_SESSION['staff_type'] == 'Admin' ) {
+?>
+
+                <li class="blue with-sub">
+				     <span>
+	                <i class="font-icon font-icon-user"></i>
+	                <span class="lbl">User Details </span>
+	            </span>
+	            <ul>
+	                <li><a href="usersprofile.php"><span class="lbl">User list</span></a></li>
+	                <li><a href="registration.php"><span class="lbl">Add New User</span></a></li>
+
+	            </ul>
+	        </li>
+
+	                	<?php
+}
+?>
+
+	        <li class="gold with-sub">
+				     <span>
+	                <i class=" font-icon font-icon-edit"></i>
+	                <span class="lbl">Forms</span>
+	            </span>
+	            <ul>
+	                <?php
+if ( $_SESSION['staff_type'] == 'User' ) {
+?>
+						<li><a href=""><span class="lbl">Submission</span></a></li>
+	                    <li><a href=".php"><span class="lbl">Add New </span></a></li>
+	                	<?php
+} elseif ( $_SESSION['staff_type'] == 'Admin' ) {
+?>
+		                <li><a href="userview.php"><span class="lbl">Users Activity</span></a></li>
+
+	                	<?php
+} else {
+	header( "location: logout.php" );
+}
+?>
+
+	                </ul>
+
+	            </ul>
+	        </li>
+
+           
+			<li class="gold with-sub hidden" id="liAddUser">  
+				
+                if ( $_SESSION['staff_type'] == 'Admin' ) {
+               ?>
+				    <span>
+	                    <i class="font-icon font-icon-user"></i>
+	                    <span class="lbl">Add User</span>
+	                </span>
+	                <ul>
+	                <li><a href="registration.php"><span class="lbl">Add New User</span></a></li>
+	                </ul>
+
+	                </li>
+	</nav>
+
+
+
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+
+    
+	<script src="js/lib/jquery/jquery.min.js"></script>
+	<script src="js/lib/tether/tether.min.js"></script>
+	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+          <script src="js/login.js"></script>
+        <script src="js/app.js"></script>
+
+</body>
+</html>

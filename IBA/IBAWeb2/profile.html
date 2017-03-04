@@ -1,0 +1,180 @@
+<?php
+   include('session.php');
+?>
+
+<!DOCTYPE html>
+
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	
+	<title>Indian Bank's Assocations</title>
+
+	<link href="img/favicon.144x144.html" rel="apple-touch-icon" type="image/png" sizes="144x144">
+	<link href="img/favicon.114x114.html" rel="apple-touch-icon" type="image/png" sizes="114x114">
+	<link href="img/favicon.72x72.html" rel="apple-touch-icon" type="image/png" sizes="72x72">
+	<link href="img/favicon.57x57.html" rel="apple-touch-icon" type="image/png">
+	<link href="img/favicon.html" rel="icon" type="image/png">
+	<link href="img/favicon-2.html" rel="shortcut icon">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+	
+	<link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lib/font-awesome/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    
+   
+</head>
+
+
+
+<body class="with-side-menu">
+        <script type="text/javascript">
+
+   	var vall1= "<?php echo $_SESSION['staff_type']; ?>";
+   	 //$_SESSION['staff_type'].value;
+   	if(vall1=='Admin')
+   	{
+   		$('#liAddUser').show();
+   	}
+   	else
+   	{
+   		$('#liAddUser').hide();
+   	}
+   </script>
+	<?php include("sidemenu.php");?>
+	
+
+	<div class="page-content">
+	    <div class="container-fluid">
+	       
+	    
+	            <div class="col-xl-12">
+	                <div class="row">
+	                    <div class="col-sm-4">
+	                        <article class="statistic-box red">
+	                            <div>
+
+                                <?php
+class TableRows extends RecursiveIteratorIterator { 
+  
+
+    function __construct($it) { 
+        parent::__construct($it, self::LEAVES_ONLY); 
+    }
+
+    function current() {
+        return "<td >" . parent::current(). "</td>";
+    }
+
+    function beginChildren() { 
+        echo "<div >"; 
+    } 
+
+    function endChildren() { 
+        echo "</div>" . "\n";
+    } 
+} 
+
+
+$servername  = "43.225.55.240"; 
+$username = "btpltk1v_ibauser";  
+$password = "123;321";
+$dbname = "btpltk1v_ibaproj";
+
+
+try {
+    $conn = new PDO("mysql:host=$servername; dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn->prepare("SELECT '<h3>Entrie</h3>',shares_currentyear_costofacquisition  FROM movable
+   "); 
+    $stmt = $conn->prepare("SELECT '<h3>Entrie</h3>',shares_currentyear_costofacquisition  FROM movable
+   "); 
+    $stmt->execute();
+
+    // set the resulting array to as sociative
+    $result = $stmt->setFetchMode(PDO::FETCH_ASSOC); 
+    foreach(new TableRows(new RecursiveArrayIterator($stmt->fetchAll())) as $k=>$v) { 
+        echo $v;
+    }
+}
+
+catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+$conn = null;
+//echo "</table>";
+?>		
+                                
+	                            </div>
+	                        </article>
+	                    </div><!--.col-->
+	            
+	
+	           
+	              
+	                    <div class="col-sm-4">
+	                        <article class="statistic-box yellow">
+	                            <div>
+	                              <?php
+                                echo " <h4>Submission</h4>";
+                                
+
+                                
+                                
+                                ?>  
+	                            </div>
+	                        </article>
+	                    </div><!--.col-->
+	                    <div class="col-sm-4">
+	                        <article class="statistic-box purple">
+	                            <div>
+	                                 <?php
+                                echo " <h4>Pending</h4>";
+                                ?> 
+	                                
+	                            </div>
+	                        </article>
+	                    </div><!--.col-->
+						
+						<!--
+	                    <div class="col-sm-3">
+	                        <article class="statistic-box green">
+	                            <div>
+	                                  <?php
+                                echo " <h4>NSCs</h4>";
+                                ?>
+	                                
+	                            </div>
+	                        </article>
+	                    </div>-->   
+						
+						
+						
+	                    
+	                    
+	                
+	                </div><!--.row-->
+	            </div><!--.col-->
+	        </div><!--.row-->
+              
+	
+	     
+	<script src="js/lib/jquery/jquery.min.js"></script>
+	<script src="js/lib/tether/tether.min.js"></script>
+	<script src="js/lib/bootstrap/bootstrap.min.js"></script>
+	<script src="js/plugins.js"></script>
+
+	
+	
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+F:\Projects\BPTL\IBA\IBA_DAL\bin\Debug\IBA_DAL.dll
+F:\Projects\BPTL\IBA\IBA_DAL\bin\Debug\IBA_DAL.pdb
+F:\Projects\BPTL\IBA\IBA_DAL\bin\Debug\IBAEntities.dll
+F:\Projects\BPTL\IBA\IBA_DAL\bin\Debug\IBAEntities.pdb
+F:\Projects\BPTL\IBA\IBA_DAL\obj\Debug\IBA_DAL.csprojResolveAssemblyReference.cache
+F:\Projects\BPTL\IBA\IBA_DAL\obj\Debug\IBA_DAL.dll
+F:\Projects\BPTL\IBA\IBA_DAL\obj\Debug\IBA_DAL.pdb

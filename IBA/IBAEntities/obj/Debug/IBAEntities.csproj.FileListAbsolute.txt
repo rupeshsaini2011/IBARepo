@@ -1,0 +1,5 @@
+F:\Projects\BPTL\IBA\IBAEntities\bin\Debug\IBAEntities.dll
+F:\Projects\BPTL\IBA\IBAEntities\bin\Debug\IBAEntities.pdb
+F:\Projects\BPTL\IBA\IBAEntities\obj\Debug\IBAEntities.dll
+F:\Projects\BPTL\IBA\IBAEntities\obj\Debug\IBAEntities.pdb
+F:\Projects\BPTL\IBA\IBAEntities\obj\Debug\IBAEntities.csprojResolveAssemblyReference.cache

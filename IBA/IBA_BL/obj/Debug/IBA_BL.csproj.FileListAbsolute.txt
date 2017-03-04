@@ -1,0 +1,9 @@
+F:\Projects\BPTL\IBA\IBA_BL\bin\Debug\IBA_BL.dll
+F:\Projects\BPTL\IBA\IBA_BL\bin\Debug\IBA_BL.pdb
+F:\Projects\BPTL\IBA\IBA_BL\obj\Debug\IBA_BL.csprojResolveAssemblyReference.cache
+F:\Projects\BPTL\IBA\IBA_BL\obj\Debug\IBA_BL.dll
+F:\Projects\BPTL\IBA\IBA_BL\obj\Debug\IBA_BL.pdb
+F:\Projects\BPTL\IBA\IBA_BL\bin\Debug\IBAEntities.dll
+F:\Projects\BPTL\IBA\IBA_BL\bin\Debug\IBA_DAL.dll
+F:\Projects\BPTL\IBA\IBA_BL\bin\Debug\IBAEntities.pdb
+F:\Projects\BPTL\IBA\IBA_BL\bin\Debug\IBA_DAL.pdb
