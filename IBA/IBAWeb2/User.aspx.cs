@@ -129,11 +129,11 @@ namespace IBAWeb2
 
                     if (allSubs != null)
                     {
-                        SubmissionEntity sub = allSubs.FirstOrDefault(s => s.SubmissionYear == Utils.GetIntValue(lblYear));
-                        if (sub != null)
+                        SubmissionEntity sub = allSubs.FirstOrDefault(s => s.SubmissionYear == Utils.GetIntValue(lblYear.Text));
+                        if (sub == null || sub.SubmittedForms.All(sf=>sf != aform))
                         {
 
-
+                            btnView.Attributes.Add("style", "display:none");
                         }
 
                     }
@@ -151,19 +151,23 @@ namespace IBAWeb2
         {
             string aform = e.CommandArgument as String;
             string year = lblYear.Text;
+            string mode = Constants.EDITMODE;
+            if (e.CommandName == "ViewForm")
+                mode = Constants.VIEWMODE;
+
             switch (aform)
             {
                 case Constants.FORMA:
-                    Response.Redirect("a.aspx?Year="+year);
+                    Response.Redirect("a.aspx?Year=" + year + "&Mode=" + mode);
                     break;
                 case Constants.FORMB:
-                    Response.Redirect("b.aspx?Year=" + year);
+                    Response.Redirect("b.aspx?Year=" + year + "&Mode=" + mode);
                     break;
                 case Constants.FORMC:
-                    Response.Redirect("c.aspx?Year=" + year);
+                    Response.Redirect("c.aspx?Year=" + year + "&Mode=" + mode);
                     break;
                 case Constants.FORMD:
-                    Response.Redirect("d.aspx?Year=" + year);
+                    Response.Redirect("d.aspx?Year=" + year + "&Mode=" + mode);
                     break;
 
 
