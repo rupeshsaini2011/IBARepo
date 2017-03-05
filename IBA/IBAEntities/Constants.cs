@@ -14,5 +14,19 @@ namespace IBAEntities
 
         public const string USERSESSIONVAR = "UserSessionVar";
         public const string StartYear = "StartYear";
+
+
+        public const string FORMA = "Form A";
+        public const string FORMB = "Form B";
+        public const string FORMC = "Form C";
+        public const string FORMD = "Form D";
+
+
+
+        public static List<string> AllForms = new List<string>{ FORMA, FORMB, FORMC, FORMD };
+
+        public static string SUBMITSESSIONVAR = "SubmitSessionVar";
+
+        public enum HowAcquired {Gift, Lease, Mortage, Purchase, Otherwise};
     }
 }

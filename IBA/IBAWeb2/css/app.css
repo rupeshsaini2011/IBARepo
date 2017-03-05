@@ -1,0 +1,90 @@
+﻿ .MyTabStyle .ajax__tab_header {
+            font-family: "Helvetica Neue", Arial, Sans-Serif;
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+            padding: 5px 0 0 5px;
+            border: solid 1px #d7d7d7;
+        }
+
+
+            .MyTabStyle .ajax__tab_header .ajax__tab_outer {
+                border-color: #222;
+                color: #222;
+                padding-left: 10px;
+                margin-right: 3px;
+                border: solid 1px #d7d7d7;
+                border-bottom: none;
+            }
+
+            .MyTabStyle .ajax__tab_header .ajax__tab_inner {
+                border-color: #600;
+                color: #999;
+                padding: 3px 10px 2px 0px;
+                font-weight: normal;
+            }
+
+        .MyTabStyle .ajax__tab_hover .ajax__tab_outer {
+            background-color: #eee;
+            cursor: pointer;
+        }
+
+        .MyTabStyle .ajax__tab_hover .ajax__tab_inner {
+            color: #000;
+        }
+
+        .MyTabStyle .ajax__tab_active .ajax__tab_outer {
+            border-bottom-color: #ffffff;
+            background-color: #d7d7d7;
+        }
+
+        .MyTabStyle .ajax__tab_active .ajax__tab_inner {
+            color: #000;
+            border-color: #333;
+            font-weight: bold;
+        }
+
+        .MyTabStyle .ajax__tab_body {
+            font-family: verdana,tahoma,helvetica;
+            font-size: 10pt;
+            background-color: #fff;
+            border-top-width: 0;
+            border: solid 1px #d7d7d7;
+            border-top-color: #ffffff;
+        }
+
+
+
+
+        .searchContainer{background-color:#e6f9ff}
+.advanceSearchContainer{background:#fff; padding:0 0px 0px; overflow:hidden;}
+.advanceSearchHidSection{background:#2e6da4; padding: 10px 20px; overflow:hidden;}
+.advanceSearchButton{float:right; background:#2e6da4; padding:6px; width:145px}
+.advanceSearchButton a{color:#FCE501; text-decoration:underline; font-size:15px; line-height:180%;}
+.advanceSearchButton a span{float:right; padding-left:3px;}
+.downArrow{background:#fff url(../../Img/expandAdvSearch.png ) right top no-repeat; height:22px; width:22px; margin:3px; line-height: 180%; padding: 0 0 0 10px;}
+.upArrow{background:#fff url(../../Img/expandAdvSearch.png) left top no-repeat; height:22px; width:22px; margin:3px; line-height: 180%; padding: 0 0 0 10px;}
+
+
+.ContentDiv
+{
+    overflow-x:hidden; 
+    white-space:nowrap;
+    text-overflow:ellipsis;    
+}
+
+.searchTitle
+	{
+	background: #2e6da4;
+	margin: 0%;
+	}
+.searchTitle h4
+	{
+	color:White;
+	font-family:Arial;
+	font-size: large;
+	}
+.searchMargin
+	{
+	margin: -1px !important;
+	}

@@ -947,6 +947,36 @@ $(document).ready(function(){
 
 
 
+    $('.searchDiv').slideUp('slow');
+    $('#searchbutton').slideUp('slow');
+
+    $('.advanceSearchButton').on("click", '.upArrow', function () {
+        var aPar = $(this).parent();
+        if (aPar.attr('data-name') == 'show') {
+            $('.searchDiv').slideUp('slow');
+            $('#searchbutton').slideUp('slow');
+            $(this).attr('title', 'Expand to Search');
+            aPar.attr('data-name', 'hide');
+            $(this).attr('class', 'downArrow');
+
+        }
+
+    });
+
+    $('.advanceSearchButton').on("click", '.downArrow', function () {
+        var aPar = $(this).parent();
+        if (aPar.attr('data-name') == 'hide') {
+            $('.searchDiv').slideDown('slow');
+            $('#searchbutton').slideDown('slow');
+            $(this).attr('title', 'Collapse');
+            aPar.attr('data-name', 'show');
+            $(this).attr('class', 'upArrow');
+        }
+    });
+
+
+
+
 
 /* ========================================================================== */
 });

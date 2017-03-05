@@ -13,5 +13,9 @@ namespace IBAEntities
         public int SubmittedById { get; set; }
         public int SubmissionYear { get; set; }
         public DateTime SubmissionDate { get; set; }
+
+        public List<string> SubmittedForms { get; set; }
+
+
     }
 }

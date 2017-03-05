@@ -43,6 +43,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxMin, Version=5.11.5295.12304, Culture=neutral, PublicKeyToken=21ef50ce11b5d80f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxMin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -156,8 +164,11 @@
   <ItemGroup>
     <Content Include="a.aspx" />
     <Content Include="a.html" />
+    <Content Include="b.aspx" />
     <Content Include="b.html" />
+    <Content Include="c.aspx" />
     <Content Include="c.html" />
+    <Content Include="css\app.css" />
     <Content Include="css\image\index.html" />
     <Content Include="css\lib\bootstrap-table\bootstrap-table-fixed-columns.css" />
     <Content Include="css\lib\bootstrap-table\bootstrap-table-reorder-rows.css" />
@@ -174,6 +185,7 @@
     <Content Include="css\lib\simplemde\simplemde.min.css" />
     <Content Include="css\lib\summernote\summernote.css" />
     <Content Include="css\main.css" />
+    <Content Include="d.aspx" />
     <Content Include="d.html" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -861,7 +873,6 @@
     <Content Include="User.aspx" />
     <Content Include="user.html" />
     <Content Include="Web.config" />
-    <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <Content Include="LoginHandler.ashx" />
     <Content Include="IBA.Master" />
@@ -879,6 +890,27 @@
     </Compile>
     <Compile Include="a.aspx.designer.cs">
       <DependentUpon>a.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="b.aspx.cs">
+      <DependentUpon>b.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="b.aspx.designer.cs">
+      <DependentUpon>b.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="c.aspx.cs">
+      <DependentUpon>c.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="c.aspx.designer.cs">
+      <DependentUpon>c.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="d.aspx.cs">
+      <DependentUpon>d.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="d.aspx.designer.cs">
+      <DependentUpon>d.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
