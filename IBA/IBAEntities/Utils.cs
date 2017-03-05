@@ -139,7 +139,7 @@ namespace IBAEntities
         {
             string path = System.AppDomain.CurrentDomain.BaseDirectory;
 
-            path = Path.Combine(path, "FileServer", fileName);
+            path = Path.Combine(path, "FormTemplates", fileName);
 
             return path;
         

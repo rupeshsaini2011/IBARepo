@@ -29,13 +29,46 @@ namespace IBA_BL
             return subs;
         }
 
+        
+       
+        public AEntity GetFormAData(int year, int userId)
+        {
+            DBProvider prov = new DBProvider();
+            return prov.GetFormAData(year, userId);
+
+
+        }
+
+        public BEntity GetFormBData(int year, int userId)
+        {
+            DBProvider prov = new DBProvider();
+           return  prov.GetFormBData(year, userId);
+
+            
+        }
+
+        public CEntity GetFormCData(int year, int userId)
+        {
+            DBProvider prov = new DBProvider();
+            return prov.GetFormCData(year, userId);
+        }
+
+        public DEntity GetFormDData(int year, int userId)
+        {
+            DBProvider prov = new DBProvider();
+            return prov.GetFormDData(year, userId);
+        }
+
+
+
+
         public void SaveFormA(AEntity aa, int year, int userId)
         {
             DBProvider prov = new DBProvider();
             prov.SaveFormA(aa, year, userId);
 
         }
-
+        
 
         public void SaveFormB(BEntity bb, int year, int userId)
         {
@@ -56,6 +89,10 @@ namespace IBA_BL
             DBProvider prov = new DBProvider();
             prov.SaveFormD(dd, year, userId);
         }
+
+
+
+
 
     }
 

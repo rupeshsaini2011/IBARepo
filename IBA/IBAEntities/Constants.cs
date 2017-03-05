@@ -29,6 +29,8 @@ namespace IBAEntities
 
         public const string VIEWMODE = "View";
 
+        public static string EDITMODE = "Edit";
+
         public enum HowAcquired {Gift, Lease, Mortage, Purchase, Otherwise};
     }
 }

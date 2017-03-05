@@ -60,6 +60,7 @@ namespace IBAWeb2
                 {
                     foreach (Control c in Page.Controls)
                     {
+
                         foreach (Control ctrl in c.Controls)
                         {
                             if (ctrl is TextBox)
@@ -125,7 +126,9 @@ namespace IBAWeb2
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
+            PDFExporter.GeneratePDF();
 
+           // Response.Redirect("Users.aspx");
         }
 
 
