@@ -47,5 +47,15 @@ namespace IBAWeb2
             userBL.SaveFormD(dd, year, user.UserId);
 
         }
+
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Users.aspx");
+
+        }
+
+
+
     }
 }

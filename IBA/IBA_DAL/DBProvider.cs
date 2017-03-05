@@ -627,7 +627,9 @@ namespace IBA_DAL
 
             spParams.Add(new SpParam("@userID", userId));
             spParams.Add(new SpParam("@year", year));
-
+            spParams.Add(new SpParam("@LoanFriends", dd.LoanFriends));
+            spParams.Add(new SpParam("@LoanSecurity", dd.LoanSecurity));
+            spParams.Add(new SpParam("@OtherLiabilities", dd.OtherLiability));
 
 
 

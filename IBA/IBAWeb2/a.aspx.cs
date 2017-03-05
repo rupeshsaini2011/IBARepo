@@ -83,7 +83,7 @@ namespace IBAWeb2
 
         protected void btnNext_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("b.aspx?Year=" + Request["Year"]);
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
@@ -126,9 +126,11 @@ namespace IBAWeb2
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-            PDFExporter.GeneratePDF();
 
-           // Response.Redirect("Users.aspx");
+
+            //PDFExporter.GeneratePDF();
+
+            Response.Redirect("Users.aspx");
         }
 
 

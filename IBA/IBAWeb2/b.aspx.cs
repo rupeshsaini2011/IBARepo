@@ -120,12 +120,12 @@ namespace IBAWeb2
 
         protected void btnNext_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("c.aspx?Year=" + Request["Year"]);
         }
 
         protected void btnBack_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Users.aspx");
         }
 
 
