@@ -71,7 +71,7 @@ namespace IBAEntities
                     if ((String)valueFromDB == String.Empty)
                         retVal = DateTime.Now;
                     else
-                        retVal = DateTime.ParseExact(valueFromDB.ToString(), formats, new CultureInfo("en-US"), DateTimeStyles.None);
+                        retVal = DateTime.Parse(valueFromDB.ToString());// formats, new CultureInfo("en-US"), DateTimeStyles.None);
                    
                 }
                 catch (Exception ex)

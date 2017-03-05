@@ -1,4 +1,6 @@
-﻿using System;
+﻿using IBA_BL;
+using IBAEntities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +13,22 @@ namespace IBAWeb2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
+        }
+
+        protected void btnSave_Click(object sender, EventArgs e)
+        {
+
+            DEntity dd = new DEntity();
+            dd.LoanFriends = Utils.GetDoubleValue(LoanFriends.Value);
+            dd.LoanSecurity = Utils.GetDoubleValue(LoanSecurity.Value);
+            dd.OtherLiability = Utils.GetStringValue(OtherLiability.Value);
+
+            UserBL userBL = new UserBL();
+            int year = Utils.GetIntValue(Request["Year"]);
+
+            UserEntity user = Session[Constants.USERSESSIONVAR] as UserEntity;
+            userBL.SaveFormD(dd, year, user.UserId);
 
         }
     }

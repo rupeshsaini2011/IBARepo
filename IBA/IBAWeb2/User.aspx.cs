@@ -36,10 +36,8 @@ namespace IBAWeb2
                         sub = allSubmissions.FirstOrDefault(s => s.SubmissionYear == i);
                     }
                     ys.submission = sub;
-                    if (i == startYear)
-                        ys.submitted = true;
-                    else
-                        ys.submitted = (sub != null);
+
+                    ys.submitted = (sub != null && sub.SubmittedForms.Count==Constants.AllForms.Count);
 
 
                     allYearSubmissions.Add(ys);

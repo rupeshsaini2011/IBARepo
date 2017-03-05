@@ -33,27 +33,35 @@
 					<div class="form-group row">
 						<label class="col-sm-2 form-control-label semibold">Loans from friends and relatives (in rs.)</label>
 						<div class="col-sm-10">
-							<p class="form-control-static"><input type="text"  class="form-control" id="" placeholder="Please enter amlount" name="loansfrom_friend_relative"></p>
+							<p class="form-control-static"><input type="text"  class="form-control" id="LoanFriends" runat="server" placeholder="Please enter amlount" name="loansfrom_friend_relative"></p>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2 form-control-label semibold">Loans against securities from banks (in rs.)</label>
 						<div class="col-sm-10">
-							<p class="form-control-static"><input type="text"  class="form-control" id="inputPassword" placeholder="Please enter amount" name="loanagainst_securities_frombank"></p>
+							<p class="form-control-static"><input type="text"  class="form-control" id="LoanSecurity" runat="server" placeholder="Please enter amount" name="loanagainst_securities_frombank"></p>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2 form-control-label semibold">Any other liability</label>
 						<div class="col-sm-10">
-							<p class="form-control-static"><input type="text"  class="form-control" id="inputPassword" placeholder="Please enter if you have any liability" name="anyother_liability"></p>
+							<p class="form-control-static"><input type="text"  class="form-control" id="OtherLiability" runat="server" placeholder="Please enter if you have any liability" name="anyother_liability"></p>
 						</div>
 					</div>
 				
 				<div class="row">
-					</div>
-					<div style="margin-left:15px">
-                 <input type="submit" class="button btn-sm btn-primary center" value="Submit">
-					</div>
+                                    
+                                    <div class="col-xs-3">
+
+                                         <asp:Button ID="btnSave" Text="Submit" runat="server" class="button btn-sm btn-primary center" OnClick="btnSave_Click" />
+                                    </div>
+
+                                    <div class="col-xs-3">
+
+                                         <asp:Button ID="btnBack" Text="Back" runat="server" class="button btn-sm btn-primary center" OnClick="btnBack_Click" />
+                                    </div>
+
+                                </div>
 
 			</div><!--.box-typical-->
 		</div><!--.container-fluid-->

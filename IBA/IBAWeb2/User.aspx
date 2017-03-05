@@ -21,7 +21,7 @@
 
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:BoundField DataField="Submitted" HeaderText="Submitted" />
+                           
                             <asp:TemplateField HeaderText="Edit">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="btnEditYear" runat="server" Text="Edit"

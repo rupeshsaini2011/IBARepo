@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AEntity.cs" />
+    <Compile Include="BEntity.cs" />
+    <Compile Include="CEntity.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="DEntity.cs" />
     <Compile Include="SubmissionEntity.cs" />
     <Compile Include="UserEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

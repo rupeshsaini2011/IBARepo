@@ -222,7 +222,7 @@
                                     <label class="form-label semibold" for="">Date </label>
                                     <div class="input-group date">
 
-                                        <input id="txtDateAcquired" runat="server" type="text" value="10/24/1984" 
+                                        <input id="txtDateAcquired" runat="server" type="text" value="01/01/2000" 
                                             class="form-control" name="date">
                                         <span class="input-group-addon">
                                             <i class="font-icon font-icon-calend"></i>
@@ -276,17 +276,17 @@
                                 <div class="row">
                                     <div class="col-xs-3">
 
-                                        <asp:Button ID="btnNext" Text="txtNext" runat="server" class="button btn-sm btn-primary center" OnClick="btnNext_Click" />
+                                        <asp:Button ID="btnNext" Text="Next" runat="server" class="button btn-sm btn-primary center" OnClick="btnNext_Click" />
                                     </div>
 
                                     <div class="col-xs-3">
 
-                                         <asp:Button ID="btnSave" Text="txtSave" runat="server" class="button btn-sm btn-primary center" OnClick="btnSave_Click" />
+                                         <asp:Button ID="btnSave" Text="Save" runat="server" class="button btn-sm btn-primary center" OnClick="btnSave_Click" />
                                     </div>
 
                                     <div class="col-xs-3">
 
-                                         <asp:Button ID="btnBack" Text="txtBack" runat="server" class="button btn-sm btn-primary center" OnClick="btnBack_Click" />
+                                         <asp:Button ID="btnBack" Text="Back" runat="server" class="button btn-sm btn-primary center" OnClick="btnBack_Click" />
                                     </div>
 
                                 </div>

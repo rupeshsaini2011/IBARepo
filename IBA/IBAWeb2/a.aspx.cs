@@ -51,7 +51,10 @@ namespace IBAWeb2
             aa.OtherDetails = txtOtherInfo.Value;
 
             UserBL userBL = new UserBL();
-            userBL.SaveFormA(aa);
+            int year = Utils.GetIntValue(Request["Year"]);
+
+            UserEntity user = Session[Constants.USERSESSIONVAR] as UserEntity;
+            userBL.SaveFormA(aa, year, user.UserId);
 
 
         }
