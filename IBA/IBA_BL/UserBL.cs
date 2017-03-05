@@ -20,7 +20,7 @@ namespace IBA_BL
            return user;
         }
 
-        public List<SubmissionEntity> GetSubmisisons(int userId)
+        public List<SubmissionEntity> GetSubmissions(int userId)
         {
             List<SubmissionEntity> subs = null;
             DBProvider prov = new DBProvider();
@@ -28,7 +28,12 @@ namespace IBA_BL
 
             return subs;
         }
-             
 
+        public void SaveFormA(AEntity aa)
+        {
+            DBProvider prov = new DBProvider();
+            prov.SaveFormA(aa);
+
+        }
     }
 }
