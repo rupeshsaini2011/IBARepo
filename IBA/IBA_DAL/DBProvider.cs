@@ -167,7 +167,7 @@ namespace IBA_DAL
             DBHelper.ExecProcNonQuery("SaveFormA", spParams, sqlConn);
         }
 
-        public AEntity GetFormAData(int userId, int year)
+        public AEntity GetFormAData(int year, int userId)
         {
             AEntity formA = null;
 
@@ -193,32 +193,32 @@ namespace IBA_DAL
                         formA = new AEntity();
 
 
-                        formA.Name = Utils.GetStringValue(drFormA["UserId"]);
+                        formA.Name = Utils.GetStringValue(drFormA["name"]);
                         formA.Designation = Utils.GetStringValue(drFormA["designation"]);
-                        formA.Institute= Utils.GetStringValue(drFormA["institute"]);
-                        formA.Village= Utils.GetStringValue(drFormA["villagename"]);
-                        formA.Tehsil= Utils.GetStringValue(drFormA["tehsilname"]);
-                       formA.District= Utils.GetStringValue(drFormA["districtname"]);
-                        formA.City= Utils.GetStringValue(drFormA["cityname"]);
-                        formA.State= Utils.GetStringValue(drFormA["statename"]);
-                        formA.PinCode= Utils.GetStringValue(drFormA["pincode"]);
+                        formA.Institute = Utils.GetStringValue(drFormA["institute"]);
+                        formA.Village = Utils.GetStringValue(drFormA["villagename"]);
+                        formA.Tehsil = Utils.GetStringValue(drFormA["tehsilname"]);
+                        formA.District = Utils.GetStringValue(drFormA["districtname"]);
+                        formA.City = Utils.GetStringValue(drFormA["cityname"]);
+                        formA.State = Utils.GetStringValue(drFormA["statename"]);
+                        formA.PinCode = Utils.GetStringValue(drFormA["pincode"]);
 
-                        formA.OtherDetails= Utils.GetStringValue(drFormA["presentvalue"]);
+                        formA.OtherDetails = Utils.GetStringValue(drFormA["description"]);
 
-                        formA.CurrentValue= Utils.GetDoubleValue(drFormA["UserId"]);
+                        formA.CurrentValue = Utils.GetDoubleValue(drFormA["presentvalue"]);
 
-                        formA.OwnName= Utils.GetBoolValue(drFormA["if_notown_name"]);
-                         formA.OwnerName= Utils.GetStringValue(drFormA["whosename"]);
-                        formA.OwnerRelation= Utils.GetStringValue(drFormA["relationship"]);
-                       formA.HowAcquired= (Constants.HowAcquired) Enum.Parse(typeof(Constants.HowAcquired), drFormA["purchasedetails"].ToString());
-                        formA.AcquiredFrom= Utils.GetStringValue(drFormA["person_whom_acquired"]);
-                        formA.AcquiredDate= Utils.GetDateTimeValue(drFormA["purchase_date"]).Value;
+                        formA.OwnName = Utils.GetBoolValue(drFormA["if_notown_name"]);
+                        formA.OwnerName = Utils.GetStringValue(drFormA["whosename"]);
+                        formA.OwnerRelation = Utils.GetStringValue(drFormA["relationship"]);
+                        formA.HowAcquired = (Constants.HowAcquired)Enum.Parse(typeof(Constants.HowAcquired), drFormA["purchasedetails"].ToString());
+                        formA.AcquiredFrom = Utils.GetStringValue(drFormA["person_whom_acquired"]);
+                        formA.AcquiredDate = Utils.GetDateTimeValue(drFormA["purchase_date"]).Value;
 
-                        formA.FundingSource= Utils.GetStringValue(drFormA["funding_details"]);
-                        formA.AnnualIncome= Utils.GetDoubleValue(drFormA["annual_income"]);
-                        formA.OtherDetails= Utils.GetStringValue(drFormA["remarks"]);
+                        formA.FundingSource = Utils.GetStringValue(drFormA["funding_details"]);
+                        formA.AnnualIncome = Utils.GetDoubleValue(drFormA["annual_income"]);
+                        formA.OtherDetails = Utils.GetStringValue(drFormA["remarks"]);
 
-     
+
                     }
                 }
                 catch (Exception ex)
@@ -332,7 +332,7 @@ namespace IBA_DAL
         }
 
 
-        public BEntity GetFormBData(int userId, int year)
+        public BEntity GetFormBData(int year, int userId)
         {
             BEntity formB = null;
 
@@ -521,7 +521,7 @@ namespace IBA_DAL
         }
 
 
-        public CEntity GetFormCData(int userId, int year)
+        public CEntity GetFormCData(int year, int userId)
         {
             CEntity formC = null;
 
@@ -547,90 +547,55 @@ namespace IBA_DAL
                         formC = new CEntity();
 
 
+                        formC.shares_script_description = Utils.GetStringValue(drFormA["shares_script_description"]);
+                        formC.shares_facevalue = Utils.GetDoubleValue(drFormA["shares_facevalue"]);
+                        formC.shares_purchase_consideration = Utils.GetDoubleValue(drFormA["shares_purchase_consideration"]);
+                        formC.shares_howacquired = Utils.GetStringValue(drFormA["shares_howacquired"]);
+                        formC.shares_relationship = Utils.GetStringValue(drFormA["shares_relationship"]);
 
-                        //public double shares_facevalue { get; set; }
-                        //public double shares_purchase_consideration { get; set; }
-                        //public string shares_howacquired { get; set; }
-                        //public string shares_relationship { get; set; }
+                        formC.debenture_script_description = Utils.GetStringValue(drFormA["debenture_script_description"]);
+                        formC.debenture_facevalue = Utils.GetDoubleValue(drFormA["debenture_facevalue"]);
+                        formC.debenture_purchase_consideration = Utils.GetDoubleValue(drFormA["debenture_purchase_consideration"]);
+                        formC.debenture_howacquired = Utils.GetStringValue(drFormA["debenture_howacquired"]);
+                        formC.debenture_relationship = Utils.GetStringValue(drFormA["debenture_relationship"]);
 
-                        //formC.LastYearSharesNo = Utils.GetIntValue(drFormA["shares_lastyear_totalno"]);
-                        //                formC.LastYearSharesValue = Utils.GetDoubleValue(drFormA["shares_lastyear_facevalue"]);
-                        //                formC.LastyearSharesCostofacquisition = Utils.GetDoubleValue(drFormA["shares_lastyear_costofacquisition"]);
-                        //                formC.CurrentYearSharesNo = Utils.GetIntValue(drFormA["shares_currentyear_totalno"]);
-                        //                formC.CurrentYearSharesValue = Utils.GetDoubleValue(drFormA["shares_currentyear_facevalue"]);
-                        //                formC.CurrentyearSharesCostofacquisition = Utils.GetDoubleValue(drFormA["shares_currentyear_costofacquisition"]);
-                        //                formC.ThisyearSharesCostofacquisition = Utils.GetDoubleValue(drFormA["shares_costofacquisition_thisyear"]);
-                        //                formC.SharesFundingSource = Utils.GetStringValue(drFormA["SharesFundingSource"]);
+                        formC.units_script_description = Utils.GetStringValue(drFormA["units_script_description"]);
+                        formC.units_facevalue = Utils.GetDoubleValue(drFormA["units_facevalue"]);
+                        formC.units_purchase_consideration = Utils.GetDoubleValue(drFormA["units_purchase_consideration"]);
+                        formC.units_howacquired = Utils.GetStringValue(drFormA["shares_howacquired"]);
+                        formC.units_relationship = Utils.GetStringValue(drFormA["units_relationship"]);
 
+                        formC.nscs_script_description = Utils.GetStringValue(drFormA["nscs_script_description"]);
+                        formC.nscs_facevalue = Utils.GetDoubleValue(drFormA["nscs_facevalue"]);
+                        formC.nscs_purchase_consideration = Utils.GetDoubleValue(drFormA["nscs_purchase_consideration"]);
+                        formC.nscs_howacquired = Utils.GetStringValue(drFormA["nscs_howacquired"]);
+                        formC.nscs_relationship = Utils.GetStringValue(drFormA["nscs_relationship"]);
 
-                        //                formC.LastYearDebenturesNo = Utils.GetIntValue(drFormA["Debentures_lastyear_totalno"]);
-                        //                formC.LastYearDebenturesValue = Utils.GetDoubleValue(drFormA["Debentures_lastyear_facevalue"]);
-                        //                formC.LastyearDebenturesCostofacquisition = Utils.GetDoubleValue(drFormA["Debentures_lastyear_costofacquisition"]);
-                        //                formC.CurrentYearDebenturesNo = Utils.GetIntValue(drFormA["Debentures_currentyear_totalno"]);
-                        //                formC.CurrentYearDebenturesValue = Utils.GetDoubleValue(drFormA["Debentures_currentyear_facevalue"]);
-                        //                formC.CurrentyearDebenturesCostofacquisition = Utils.GetDoubleValue(drFormA["Debentures_currentyear_costofacquisition"]);
-                        //                formC.ThisyearDebenturesCostofacquisition = Utils.GetDoubleValue(drFormA["Debentures_costofacquisition_thisyear"]);
-                        //                formC.DebenturesFundingSource = Utils.GetStringValue(drFormA["DebenturesFundingSource"]);
-
-
-                        //                formC.LastYearUnitsNo = Utils.GetIntValue(drFormA["Units_lastyear_totalno"]);
-                        //                formC.LastYearUnitsValue = Utils.GetDoubleValue(drFormA["Units_lastyear_facevalue"]);
-                        //                formC.LastyearUnitsCostofacquisition = Utils.GetDoubleValue(drFormA["Units_lastyear_costofacquisition"]);
-                        //                formC.CurrentYearUnitsNo = Utils.GetIntValue(drFormA["Units_currentyear_totalno"]);
-                        //                formC.CurrentYearUnitsValue = Utils.GetDoubleValue(drFormA["Units_currentyear_facevalue"]);
-                        //                formC.CurrentyearUnitsCostofacquisition = Utils.GetDoubleValue(drFormA["Units_currentyear_costofacquisition"]);
-                        //                formC.ThisyearUnitsCostofacquisition = Utils.GetDoubleValue(drFormA["Units_costofacquisition_thisyear"]);
-                        //                formC.UnitsFundingSource = Utils.GetStringValue(drFormA["UnitsFundingSource"]);
-
-
-                        //                formC.LastYearNSCNo = Utils.GetIntValue(drFormA["NSC_lastyear_totalno"]);
-                        //                formC.LastYearNSCValue = Utils.GetDoubleValue(drFormA["NSC_lastyear_facevalue"]);
-                        //                formC.LastyearNSCCostofacquisition = Utils.GetDoubleValue(drFormA["NSC_lastyear_costofacquisition"]);
-                        //                formC.CurrentYearNSCNo = Utils.GetIntValue(drFormA["NSC_currentyear_totalno"]);
-                        //                formC.CurrentYearNSCValue = Utils.GetDoubleValue(drFormA["NSC_currentyear_facevalue"]);
-                        //                formC.CurrentyearNSCCostofacquisition = Utils.GetDoubleValue(drFormA["NSC_currentyear_costofacquisition"]);
-                        //                formC.ThisyearNSCCostofacquisition = Utils.GetDoubleValue(drFormA["NSC_costofacquisition_thisyear"]);
-                        //                formC.NSCFundingSource = Utils.GetStringValue(drFormA["NSCFundingSource"]);
+                        formC.nss_script_description = Utils.GetStringValue(drFormA["nss_script_description"]);
+                        formC.nss_facevalue = Utils.GetDoubleValue(drFormA["nss_facevalue"]);
+                        formC.nss_purchase_consideration = Utils.GetDoubleValue(drFormA["nss_purchase_consideration"]);
+                        formC.nss_howacquired = Utils.GetStringValue(drFormA["nss_howacquired"]);
+                        formC.nss_relationship = Utils.GetStringValue(drFormA["nss_relationship"]);
 
 
 
-                        //                formC.LastYearNSSNo = Utils.GetIntValue(drFormA["NSS_lastyear_totalno"]);
-                        //                formC.LastYearNSSValue = Utils.GetDoubleValue(drFormA["NSS_lastyear_facevalue"]);
-                        //                formC.LastyearNSSCostofacquisition = Utils.GetDoubleValue(drFormA["NSS_lastyear_costofacquisition"]);
-                        //                formC.CurrentYearNSSNo = Utils.GetIntValue(drFormA["NSS_currentyear_totalno"]);
-                        //                formC.CurrentYearNSSValue = Utils.GetDoubleValue(drFormA["NSS_currentyear_facevalue"]);
-                        //                formC.CurrentyearNSSCostofacquisition = Utils.GetDoubleValue(drFormA["NSS_currentyear_costofacquisition"]);
-                        //                formC.ThisyearNSSCostofacquisition = Utils.GetDoubleValue(drFormA["NSS_costofacquisition_thisyear"]);
-                        //                formC.NSSFundingSource = Utils.GetStringValue(drFormA["NSSFundingSource"]);
+                        formC.allbank_script_description = Utils.GetStringValue(drFormA["allbank_script_description"]);
+                        formC.allbank_facevalue = Utils.GetDoubleValue(drFormA["allbank_facevalue"]);
+                        formC.allbank_purchase_consideration = Utils.GetDoubleValue(drFormA["allbank_purchase_consideration"]);
+                        formC.allbank_howacquired = Utils.GetStringValue(drFormA["allbank_howacquired"]);
+                        formC.allbank_relationship = Utils.GetStringValue(drFormA["allbank_relationship"]);
 
+                        formC.othersecurity_script_description = Utils.GetStringValue(drFormA["othersecurity_script_description"]);
+                        formC.othersecurity_facevalue = Utils.GetDoubleValue(drFormA["othersecurity_facevalue"]);
+                        formC.othersecurity_purchase_consideration = Utils.GetDoubleValue(drFormA["othersecurity_purchase_consideration"]);
+                        formC.othersecurity_howacquired = Utils.GetStringValue(drFormA["othersecurity_howacquired"]);
+                        formC.othersecurity_relationship = Utils.GetStringValue(drFormA["othersecurity_relationship"]);
 
-                        //                formC.LastYearBondsNo = Utils.GetIntValue(drFormA["Bonds_lastyear_totalno"]);
-                        //                formC.LastYearBondsValue = Utils.GetDoubleValue(drFormA["Bonds_lastyear_facevalue"]);
-                        //                formC.LastyearBondsCostofacquisition = Utils.GetDoubleValue(drFormA["Bonds_lastyear_costofacquisition"]);
-                        //                formC.CurrentYearBondsNo = Utils.GetIntValue(drFormA["Bonds_currentyear_totalno"]);
-                        //                formC.CurrentYearBondsValue = Utils.GetDoubleValue(drFormA["Bonds_currentyear_facevalue"]);
-                        //                formC.CurrentyearBondsCostofacquisition = Utils.GetDoubleValue(drFormA["Bonds_currentyear_costofacquisition"]);
-                        //                formC.ThisyearBondsCostofacquisition = Utils.GetDoubleValue(drFormA["Bonds_costofacquisition_thisyear"]);
-                        //                formC.BondsFundingSource = Utils.GetStringValue(drFormA["BondsFundingSource"]);
-
-                        //                formC.LastYearDepositsNo = Utils.GetIntValue(drFormA["Deposits_lastyear_totalno"]);
-                        //                formC.LastYearDepositsValue = Utils.GetDoubleValue(drFormA["Deposits_lastyear_facevalue"]);
-                        //                formC.LastyearDepositsCostofacquisition = Utils.GetDoubleValue(drFormA["Deposits_lastyear_costofacquisition"]);
-                        //                formC.CurrentYearDepositsNo = Utils.GetIntValue(drFormA["Deposits_currentyear_totalno"]);
-                        //                formC.CurrentYearDepositsValue = Utils.GetDoubleValue(drFormA["Deposits_currentyear_facevalue"]);
-                        //                formC.CurrentyearDepositsCostofacquisition = Utils.GetDoubleValue(drFormA["Deposits_currentyear_costofacquisition"]);
-                        //                formC.ThisyearDepositsCostofacquisition = Utils.GetDoubleValue(drFormA["Deposits_costofacquisition_thisyear"]);
-                        //                formC.DepositsFundingSource = Utils.GetStringValue(drFormA["DepositsFundingSource"]);
-
-
-                        //                formC.LastYearOthersNo = Utils.GetIntValue(drFormA["Others_lastyear_totalno"]);
-                        //                formC.LastYearOthersValue = Utils.GetDoubleValue(drFormA["Others_lastyear_facevalue"]);
-                        //                formC.LastyearOthersCostofacquisition = Utils.GetDoubleValue(drFormA["Others_lastyear_costofacquisition"]);
-                        //                formC.CurrentYearOthersNo = Utils.GetIntValue(drFormA["Others_currentyear_totalno"]);
-                        //                formC.CurrentYearOthersValue = Utils.GetDoubleValue(drFormA["Others_currentyear_facevalue"]);
-                        //                formC.CurrentyearOthersCostofacquisition = Utils.GetDoubleValue(drFormA["Others_currentyear_costofacquisition"]);
-                        //                formC.ThisyearOthersCostofacquisition = Utils.GetDoubleValue(drFormA["Others_costofacquisition_thisyear"]);
-                        //                formC.OthersFundingSource = Utils.GetStringValue(drFormA["OthersFundingSource"]);
+                        formC.allother_script_description = Utils.GetStringValue(drFormA["allother_script_description"]);
+                        formC.allother_facevalue = Utils.GetDoubleValue(drFormA["allother_facevalue"]);
+                        formC.allother_purchase_consideration = Utils.GetDoubleValue(drFormA["allother_purchase_consideration"]);
+                        formC.allother_howacquired = Utils.GetStringValue(drFormA["allother_howacquired"]);
+                        formC.allother_relationship = Utils.GetStringValue(drFormA["allother_relationship"]);
 
                     }
                 }
@@ -646,6 +611,8 @@ namespace IBA_DAL
 
 
         }
+
+
 
 
 
@@ -667,6 +634,55 @@ namespace IBA_DAL
             DBHelper.ExecProcNonQuery("SaveFormD", spParams, sqlConn);
 
         }
+
+        public DEntity GetFormDData(int year, int userId)
+        {
+            DEntity formD = null;
+
+            DataSet dsFormD = new DataSet();
+            SpParamCollection spParams = new SpParamCollection();
+            sqlConn = new SqlConnection(m_connectionString);
+            spParams.Add(new SpParam("@userId", userId));
+            spParams.Add(new SpParam("@Year", year));
+
+
+
+            DBHelper.ExecProcAndFillDataSet("GetFormDData", spParams, dsFormD, sqlConn);
+
+            if (dsFormD != null && dsFormD.Tables.Count > 0)
+            {
+                try
+                {
+                    DataTable dtFormA = dsFormD.Tables[0];
+
+                    if (dtFormA != null && dtFormA.Rows.Count > 0)
+                    {
+                        DataRow drFormA = dtFormA.Rows[0];
+                        formD = new DEntity();
+
+                        formD.LoanFriends = Utils.GetDoubleValue(drFormA["loansfrom_friend_relative"]);
+                        formD.LoanSecurity = Utils.GetDoubleValue(drFormA["loanagainst_securities_frombank"]);
+                        formD.OtherLiability = Utils.GetStringValue(drFormA["anyother_liability"]);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+
+                }
+
+
+            }
+            return formD;
+
+
+        }
+
+
+
+
+
+
 
     }
 }

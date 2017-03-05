@@ -103,7 +103,7 @@
                             <fieldset class="form-group">
                                 <label class="form-label semibold" for="">City name </label>
                                 <input type="text" class="form-control" id="txtCity" 
-                                    name="cityname" placeholder="Please enter city name" runat="server">>
+                                    name="cityname" placeholder="Please enter city name" runat="server"> 
                             </fieldset>
 
                         </div>

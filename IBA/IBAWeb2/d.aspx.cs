@@ -13,7 +13,23 @@ namespace IBAWeb2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                UserBL userBL = new UserBL();
+                int year = Utils.GetIntValue(Request["Year"]);
+                string mode = Utils.GetStringValue(Request["Mode"]);
 
+                UserEntity user = Session[Constants.USERSESSIONVAR] as UserEntity;
+                DEntity dd = userBL.GetFormDData(year, user.UserId);
+
+                if (dd != null)
+                {
+                    LoanFriends.Value = dd.LoanFriends.ToString();
+                    LoanSecurity.Value = dd.LoanSecurity.ToString();
+                    OtherLiability.Value = dd.OtherLiability.ToString();
+
+                }
+            }
         }
 
         protected void btnSave_Click(object sender, EventArgs e)

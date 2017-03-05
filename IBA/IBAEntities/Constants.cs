@@ -27,6 +27,8 @@ namespace IBAEntities
 
         public static string SUBMITSESSIONVAR = "SubmitSessionVar";
 
+        public const string VIEWMODE = "View";
+
         public enum HowAcquired {Gift, Lease, Mortage, Purchase, Otherwise};
     }
 }

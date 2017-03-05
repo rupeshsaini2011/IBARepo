@@ -13,7 +13,109 @@ namespace IBAWeb2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                UserBL userBL = new UserBL();
+                int year = Utils.GetIntValue(Request["Year"]);
+                string mode = Utils.GetStringValue(Request["Mode"]);
 
+
+
+                UserEntity user = Session[Constants.USERSESSIONVAR] as UserEntity;
+                BEntity bb = userBL.GetFormBData(year, user.UserId);
+
+                if (bb != null)
+                {
+                    LastYearSharesNo.Value = bb.LastYearSharesNo.ToString();
+                    LastYearSharesValue.Value = bb.LastYearSharesValue.ToString();
+                    LastyearSharesCostofacquisition.Value = bb.LastyearSharesCostofacquisition.ToString();
+                    CurrentYearSharesNo.Value = bb.CurrentYearSharesNo.ToString();
+                    CurrentYearSharesValue.Value = bb.CurrentYearSharesValue.ToString();
+                    CurrentyearSharesCostofacquisition.Value = bb.CurrentyearSharesCostofacquisition.ToString();
+                    ThisyearSharesCostofacquisition.Value = bb.ThisyearSharesCostofacquisition.ToString();
+                    SharesFundingSource.Value = bb.SharesFundingSource.ToString();
+
+                    LastYearDebenturesNo.Value = bb.LastYearDebenturesNo.ToString();
+                    LastYearDebenturesValue.Value = bb.LastYearDebenturesValue.ToString();
+                    LastyearDebenturesCostofacquisition.Value = bb.LastyearDebenturesCostofacquisition.ToString();
+                    CurrentYearDebenturesNo.Value = bb.CurrentYearDebenturesNo.ToString();
+                    CurrentYearDebenturesValue.Value = bb.CurrentYearDebenturesValue.ToString();
+                    CurrentyearDebenturesCostofacquisition.Value = bb.CurrentyearDebenturesCostofacquisition.ToString();
+                    ThisyearDebenturesCostofacquisition.Value = bb.ThisyearDebenturesCostofacquisition.ToString();
+                    DebenturesFundingSource.Value = bb.DebenturesFundingSource.ToString();
+
+                    LastYearUnitsNo.Value = bb.LastYearUnitsNo.ToString();
+                    LastYearUnitsValue.Value = bb.LastYearUnitsValue.ToString();
+                    LastyearUnitsCostofacquisition.Value = bb.LastyearUnitsCostofacquisition.ToString();
+                    CurrentYearUnitsNo.Value = bb.CurrentYearUnitsNo.ToString();
+                    CurrentYearUnitsValue.Value = bb.CurrentYearUnitsValue.ToString();
+                    CurrentyearUnitsCostofacquisition.Value = bb.CurrentyearUnitsCostofacquisition.ToString();
+                    ThisyearUnitsCostofacquisition.Value = bb.ThisyearUnitsCostofacquisition.ToString();
+                    UnitsFundingSource.Value = bb.UnitsFundingSource.ToString();
+
+                    LastYearNSCNo.Value = bb.LastYearNSCNo.ToString();
+                    LastYearNSCValue.Value = bb.LastYearNSCValue.ToString();
+                    LastyearNSCCostofacquisition.Value = bb.LastyearNSCCostofacquisition.ToString();
+                    CurrentYearNSCNo.Value = bb.CurrentYearNSCNo.ToString();
+                    CurrentYearNSCValue.Value = bb.CurrentYearNSCValue.ToString();
+                    CurrentyearNSCCostofacquisition.Value = bb.CurrentyearNSCCostofacquisition.ToString();
+                    ThisyearNSCCostofacquisition.Value = bb.ThisyearNSCCostofacquisition.ToString();
+                    NSCFundingSource.Value = bb.NSCFundingSource.ToString();
+
+                    LastYearNSSNo.Value = bb.LastYearNSSNo.ToString();
+                    LastYearNSSValue.Value = bb.LastYearNSSValue.ToString();
+                    LastyearNSSCostofacquisition.Value = bb.LastyearNSSCostofacquisition.ToString();
+                    CurrentYearNSSNo.Value = bb.CurrentYearNSSNo.ToString();
+                    CurrentYearNSSValue.Value = bb.CurrentYearNSSValue.ToString();
+                    CurrentyearNSSCostofacquisition.Value = bb.CurrentyearNSSCostofacquisition.ToString();
+                    ThisyearNSSCostofacquisition.Value = bb.ThisyearNSSCostofacquisition.ToString();
+                    NSSFundingSource.Value = bb.NSSFundingSource.ToString();
+
+                    LastYearBondsNo.Value = bb.LastYearBondsNo.ToString();
+                    LastYearBondsValue.Value = bb.LastYearBondsValue.ToString();
+                    LastyearBondsCostofacquisition.Value = bb.LastyearBondsCostofacquisition.ToString();
+                    CurrentYearBondsNo.Value = bb.CurrentYearBondsNo.ToString();
+                    CurrentYearBondsValue.Value = bb.CurrentYearBondsValue.ToString();
+                    CurrentyearBondsCostofacquisition.Value = bb.CurrentyearBondsCostofacquisition.ToString();
+                    ThisyearBondsCostofacquisition.Value = bb.ThisyearBondsCostofacquisition.ToString();
+                    BondsFundingSource.Value = bb.BondsFundingSource.ToString();
+
+                    LastYearDepositsNo.Value = bb.LastYearDepositsNo.ToString();
+                    LastYearDepositsValue.Value = bb.LastYearDepositsValue.ToString();
+                    LastYearDepositsCostofacquisition.Value = bb.LastyearDepositsCostofacquisition.ToString();
+                    CurrentYearDepositsNo.Value = bb.CurrentYearDepositsNo.ToString();
+                    CurrentYearDepositsValue.Value = bb.CurrentYearDepositsValue.ToString();
+                    CurrentyearDepositsCostofacquisition.Value = bb.CurrentyearDepositsCostofacquisition.ToString();
+                    ThisyearDepositsCostofacquisition.Value = bb.ThisyearDepositsCostofacquisition.ToString();
+                    DepositsFundingSource.Value = bb.DepositsFundingSource.ToString();
+
+
+                    LastYearOthersNo.Value = bb.LastYearOthersNo.ToString();
+                    LastYearOthersValue.Value = bb.LastYearOthersValue.ToString();
+                    LastyearOthersCostofacquisition.Value = bb.LastyearOthersCostofacquisition.ToString();
+                    CurrentYearOthersNo.Value = bb.CurrentYearOthersNo.ToString();
+                    CurrentYearOthersValue.Value = bb.CurrentYearOthersValue.ToString();
+                    CurrentyearOthersCostofacquisition.Value = bb.CurrentyearOthersCostofacquisition.ToString();
+                    ThisyearOthersCostofacquisition.Value = bb.ThisyearOthersCostofacquisition.ToString();
+                    OthersFundingSource.Value = bb.OthersFundingSource.ToString();
+                }
+
+
+                if (mode == Constants.VIEWMODE)
+                {
+                    foreach (Control c in Page.Controls)
+                    {
+                        foreach (Control ctrl in c.Controls)
+                        {
+                            if (ctrl is TextBox)
+                                (ctrl as TextBox).Enabled = false;
+                        }
+
+                    }
+
+
+                }
+            }
         }
 
         protected void btnNext_Click(object sender, EventArgs e)

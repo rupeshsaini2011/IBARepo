@@ -68,9 +68,8 @@ namespace IBAEntities
                 
                 try
                 {
-                    if ((String)valueFromDB == String.Empty)
-                        retVal = DateTime.Now;
-                    else
+                   
+                    
                         retVal = DateTime.Parse(valueFromDB.ToString());// formats, new CultureInfo("en-US"), DateTimeStyles.None);
                    
                 }

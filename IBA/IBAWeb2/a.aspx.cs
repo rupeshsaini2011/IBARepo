@@ -14,6 +14,70 @@ namespace IBAWeb2
         protected void Page_Load(object sender, EventArgs e)
         {
 
+            if (!Page.IsPostBack)
+            {
+                UserBL userBL = new UserBL();
+                int year = Utils.GetIntValue(Request["Year"]);
+                string mode = Utils.GetStringValue(Request["Mode"]);
+
+               
+
+                UserEntity user = Session[Constants.USERSESSIONVAR] as UserEntity;
+                AEntity aa = userBL.GetFormAData(year, user.UserId);
+
+                if (aa != null)
+                {
+                    inputName.Value = aa.Name;
+                    inputDesignation.Value = aa.Designation;
+                    inputInstitution.Value = aa.Institute;
+                    txtVillage.Value = aa.Village;
+                    txtTehsil.Value = aa.Tehsil;
+                    txtDistrict.Value = aa.District;
+                    txtCity.Value = aa.City;
+                    txtState.Value = aa.State;
+                    txtPincode.Value = aa.PinCode;
+
+                    txtDescription.InnerText = aa.OtherDetails;
+
+                    txtPresentValue.Value = aa.CurrentValue.ToString();
+
+                    chkOwnNameYes.Checked = aa.OwnName;
+                    txtOwnerName.Value = aa.OwnerName;
+                    txtOwnerRelation.Value = aa.OwnerRelation;
+                    ddlHowAcquired.Value = aa.HowAcquired.ToString();
+                    txtPersonFromAcquired.Value = aa.AcquiredFrom;
+                    txtDateAcquired.Value = aa.AcquiredDate.ToString();
+
+                    txtFundingDetails.Value = aa.FundingSource;
+                    txtAnnualIncome.Value = aa.AnnualIncome.ToString();
+                    txtOtherInfo.Value = aa.OtherDetails;
+
+
+                }
+
+
+                if (mode == Constants.VIEWMODE)
+                {
+                    foreach (Control c in Page.Controls)
+                    {
+                        foreach (Control ctrl in c.Controls)
+                        {
+                            if (ctrl is TextBox)
+                                (ctrl as TextBox).Enabled = false;
+                        }
+
+                    }
+
+
+                }
+
+
+
+            }
+
+
+
+
         }
 
         protected void btnNext_Click(object sender, EventArgs e)
